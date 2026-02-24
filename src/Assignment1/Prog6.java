@@ -13,20 +13,21 @@ public class Prog6 {
         {
             input[i]= Integer.parseInt(IO.readln());
         }
-        int secondLargestNumber = 0;
-        int largestNumber = 0;
+        int secondSmallestNumber = Integer.MAX_VALUE;
+        int smallestNumber = Integer.MAX_VALUE;
 
-        for(int i=0;i< input.length;i++)
+        for(int i=0;i< input.length;i++) // 10 9 8 7 6
         {
-            if(input[i] > largestNumber)
+            if(input[i] < smallestNumber)
             {
-                largestNumber = input[i];
+                secondSmallestNumber = smallestNumber;
+                smallestNumber = input[i];
             }
-            if(input[i] > secondLargestNumber && input[i] < largestNumber)
+            if(input[i] < secondSmallestNumber && input[i] > smallestNumber)
             {
-                secondLargestNumber = input[i];
+                secondSmallestNumber = input[i];
             }
         }
-        System.out.println("The second largest number is "+ secondLargestNumber);
+        System.out.println("The second largest number is "+ secondSmallestNumber);
     }
 }
