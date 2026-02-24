@@ -18,7 +18,7 @@ public class Prog6 {
 
         for(int i=0;i< input.length;i++) // 10 9 8 7 6
         {
-            if(input[i] < smallestNumber)
+            if(input[i] <= smallestNumber)
             {
                 secondSmallestNumber = smallestNumber;
                 smallestNumber = input[i];
@@ -27,6 +27,7 @@ public class Prog6 {
             {
                 secondSmallestNumber = input[i];
             }
+
         }
         System.out.println("The second largest number is "+ secondSmallestNumber);
     }
