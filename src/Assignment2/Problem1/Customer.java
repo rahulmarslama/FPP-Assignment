@@ -2,11 +2,11 @@ package Assignment2.Problem1;
 
 public class Customer
 {
-    public String firstName;
-    public String lastName;
-    public String socSecurityNum;
-    public Address billingAddress;
-    public Address shippingAddress;
+    private String firstName;
+    private String lastName;
+    private String socSecurityNum;
+    private Address billingAddress;
+    private Address shippingAddress;
 
     public Customer(String firstName,String lastName, String socSecurityNum)
     {

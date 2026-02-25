@@ -22,7 +22,7 @@ public class Main
 
         for (Customer customer:customers)
         {
-            if(customer.billingAddress.city.equals("Chicago"))
+            if(customer.getBillingAddress().getCity().equals("Chicago"))
             {
                 System.out.println(customer.toString());
             }
