@@ -10,8 +10,8 @@ public class TravelBooker
         String restart = "";
         do {
             String bookingType = IO.readln("Enter F for Flight Booking\n" +
-                "Enter H for Hotel Booking\n" +
-                "Enter C for Car Rental\n");
+                                                   "Enter H for Hotel Booking\n" +
+                                                   "Enter C for Car Rental\n");
             switch (bookingType.toUpperCase()) {
                 case "F" -> {
                     String origin = IO.readln("Enter origin: \n");
