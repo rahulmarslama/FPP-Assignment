@@ -42,5 +42,17 @@ public class Pizza
                              "Tax: $%.2f \nTotal Price: $%.2f \n"
                               ,this.pizzaSize.name(),this.pizzaType.name()
                               ,this.quantity,totalPrice,taxAmount,totalPrice+taxAmount);
+
+        //format String with text block
+        /*return String.format("""
+                Pizza Order:
+                Size: %s
+                Type: %s
+                Qty: %d
+                Price: $%.2f
+                Tax: $%.2f
+                Total Price: $%.2f
+                """,this.pizzaSize.name(),this.pizzaType.name()
+                ,this.quantity,totalPrice,taxAmount,totalPrice+taxAmount);*/
     }
 }
