@@ -14,7 +14,6 @@ public class Problem3
         }
         else
         {
-            int lastDigit = num%10;
             return getReverse(num/10,(reversed*10)+ num%10);
 
         }
