@@ -16,7 +16,7 @@ public class Problem2
         return arr;
     }
 
-    private static int[] reverseArray(int[] arr)
+    public static int[] reverseArray(int[] arr)
     {
         return reverseArray(arr,0,arr.length-1);
     }

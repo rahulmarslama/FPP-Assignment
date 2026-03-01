@@ -9,11 +9,11 @@ public class Problem1
     static void main(String[] args)
     {
         String input = IO.readln("Enter your input to find the minimum character: ");
-        Character minChar = MinimimumCharacter(input);
+        Character minChar = getMinimumCharacter(input);
         System.out.println("The minimum character is: "+minChar);
     }
 
-    private static Character MinimimumCharacter(String str)
+    public static Character getMinimumCharacter(String str)
     {
         if(str == null || str.isEmpty())
         {
@@ -24,7 +24,7 @@ public class Problem1
         }
         else
         {
-            Character min = MinimimumCharacter(str.substring(1));
+            Character min = getMinimumCharacter(str.substring(1));
             return (min.compareTo(str.charAt(0)) > 0 ? str.charAt(0):min);
         }
     }
