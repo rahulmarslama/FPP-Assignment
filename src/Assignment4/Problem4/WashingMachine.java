@@ -1,17 +1,20 @@
 package Assignment4.Problem4;
 
-public class WashingMachine  {
+public class WashingMachine implements Appliance {
     private int loadCapacity;
 
-    public WashingMachine(int loadCapacity) {
+    public WashingMachine(int loadCapacity)
+    {
         this.loadCapacity = loadCapacity;
     }
 
-    public int getLoadCapacity() {
+    public int getLoadCapacity()
+    {
         return loadCapacity;
     }
 
-    public void performFunction() {
+    public void performFunction()
+    {
         System.out.println("Starting wash cycle with load capacity: " + loadCapacity + " kg.");
     }
 }
