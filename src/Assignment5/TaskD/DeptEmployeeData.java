@@ -1,6 +1,7 @@
 package Assignment5.TaskD;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
 
 
 public class DeptEmployeeData {
@@ -22,7 +23,14 @@ public class DeptEmployeeData {
 		DeptEmployee[]  department = getDeptData();
 
 		//Before Sorting
-		System.out.println("Before Sortng:"+ Arrays.toString(department));
+		System.out.println("Before Sorting:"+ Arrays.toString(department));
+
+		Arrays.sort(department, new Comparator<DeptEmployee>() {
+			@Override
+			public int compare(DeptEmployee o1, DeptEmployee o2) {
+				return o2.getName().compareTo(o1.getName());
+			}
+		});
 		//After Sorting
 		System.out.println("After Sorting with name:"+ Arrays.toString(department));
 
