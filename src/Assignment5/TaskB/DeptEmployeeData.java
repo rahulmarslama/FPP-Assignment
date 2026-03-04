@@ -1,5 +1,8 @@
 package Assignment5.TaskB;
+
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Comparator;
 
 
 public class DeptEmployeeData {
@@ -16,5 +19,29 @@ public class DeptEmployeeData {
 		return department;
 
 	}
+	static void main()
+	{
+		DeptEmployee[]  department = getDeptData();
+
+		//Before Sorting
+		System.out.println("Before Sortng:"+ Arrays.toString(department));
+
+		Arrays.sort(department,MyInnerClassInstantiator());
+		//After Sorting
+		System.out.println("After Sorting with name:"+ Arrays.toString(department));
+
+	}
+
+	static class InnerClass implements Comparator<DeptEmployee>
+	{
+
+		@Override
+		public int compare(DeptEmployee o1, DeptEmployee o2) {
+			return o1.getName().compareTo(o2.getName());
+		}
+	}
+
+	static InnerClass MyInnerClassInstantiator(){return new InnerClass();}
+
 
 }

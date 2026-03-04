@@ -1,5 +1,6 @@
 package Assignment5.TaskD;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 
 public class DeptEmployeeData {
@@ -14,6 +15,16 @@ public class DeptEmployeeData {
 		
 		DeptEmployee[]  department = {p0,p1,p2,s0,s1};
 		return department;
+
+	}
+	static void main()
+	{
+		DeptEmployee[]  department = getDeptData();
+
+		//Before Sorting
+		System.out.println("Before Sortng:"+ Arrays.toString(department));
+		//After Sorting
+		System.out.println("After Sorting with name:"+ Arrays.toString(department));
 
 	}
 
