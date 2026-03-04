@@ -25,7 +25,7 @@ public class DeptEmployeeData {
 		DeptEmployee[]  department = getDeptData();
 
 		//Before Sorting
-		System.out.println("Before Sortng:"+ Arrays.toString(department));
+		System.out.println("Before Sorting:"+ Arrays.toString(department));
 		TaskAComparator comparator = new TaskAComparator();
 
 		Arrays.sort(department,comparator);

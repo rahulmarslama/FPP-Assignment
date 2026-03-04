@@ -1,6 +1,7 @@
 package Assignment5.TaskC;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
 
 
 public class DeptEmployeeData {
@@ -23,10 +24,26 @@ public class DeptEmployeeData {
 		DeptEmployee[]  department = getDeptData();
 
 		//Before Sorting
-		System.out.println("Before Sortng:"+ Arrays.toString(department));
-		//After Sorting
-		System.out.println("After Sorting with name:"+ Arrays.toString(department));
+		System.out.println("Before Sorting:"+ Arrays.toString(department));
 
+		myFunc(department);
+
+	}
+
+	static void myFunc(DeptEmployee[] dept)
+	{
+		class LocalClass implements Comparator<DeptEmployee>
+		{
+
+			@Override
+			public int compare(DeptEmployee o1, DeptEmployee o2) {
+				return Double.compare(o2.getSalary(),o1.getSalary());
+			}
+		}
+
+		Arrays.sort(dept,new LocalClass());
+		//After Sorting
+		System.out.println("After Sorting with reversed salary:"+ Arrays.toString(dept));
 	}
 
 }
