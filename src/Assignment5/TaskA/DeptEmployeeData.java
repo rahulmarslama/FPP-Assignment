@@ -1,10 +1,13 @@
 package Assignment5.TaskA;
+import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 
 public class DeptEmployeeData {
 
-	public static DeptEmployee[] getDeptData() {
+	public static DeptEmployee[] getDeptData()
+	{
 		Professor p0 = new Professor("Joe",40000, LocalDate.of(1999,12,24));
 		Professor p1 = new Professor("Bob",50000,LocalDate.of(1979,1,2));
 		Professor p2 = new Professor("Anna",45000,LocalDate.of(2000,5,21));
@@ -14,6 +17,20 @@ public class DeptEmployeeData {
 		
 		DeptEmployee[]  department = {p0,p1,p2,s0,s1};
 		return department;
+
+	}
+
+	static void main()
+	{
+		DeptEmployee[]  department = getDeptData();
+
+		//Before Sorting
+		System.out.println("Before Sortng:"+ Arrays.toString(department));
+		TaskAComparator comparator = new TaskAComparator();
+
+		Arrays.sort(department,comparator);
+		//After Sorting
+		System.out.println("After Sorting with name:"+ Arrays.toString(department));
 
 	}
 

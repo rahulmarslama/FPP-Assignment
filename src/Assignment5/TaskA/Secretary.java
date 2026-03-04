@@ -9,6 +9,7 @@ public class Secretary extends DeptEmployee {
 	public Secretary(String name, double salary, LocalDate hireDate, double overtimeHours){
 		super(name,salary,hireDate);
 		this.overtimeHours = overtimeHours;
+		this.netSalary = getSalary();
 	}
 	public double getOvertimeHours() {
 		return overtimeHours;
@@ -20,7 +21,9 @@ public class Secretary extends DeptEmployee {
 		return netSalary;
 	}
 	@Override
-	public String toString() {
-		return "name=" + super.getName() + ", salary=" + netSalary + ", hireDate=" + super.getHireDate();
+	public String toString()
+	{
+		return "name=" + super.getName() + ", salary=" + netSalary +
+				", hireDate=" + super.getHireDate();
 	}
 }
