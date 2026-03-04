@@ -32,7 +32,7 @@ public class DeptEmployeeData {
 			}
 		});
 		//After Sorting
-		System.out.println("After Sorting with name:"+ Arrays.toString(department));
+		System.out.println("After Sorting with reversed order name:"+ Arrays.toString(department));
 
 	}
 

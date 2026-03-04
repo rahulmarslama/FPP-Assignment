@@ -43,7 +43,7 @@ public class DeptEmployeeData {
 
 		Arrays.sort(dept,new LocalClass());
 		//After Sorting
-		System.out.println("After Sorting with reversed salary:"+ Arrays.toString(dept));
+		System.out.println("After Sorting with reversed order salary:"+ Arrays.toString(dept));
 	}
 
 }

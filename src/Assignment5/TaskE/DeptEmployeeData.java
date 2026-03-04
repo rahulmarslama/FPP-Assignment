@@ -23,9 +23,11 @@ public class DeptEmployeeData {
 		DeptEmployee[]  department = getDeptData();
 
 		//Before Sorting
-		System.out.println("Before Sortng:"+ Arrays.toString(department));
+		System.out.println("Before Sorting:"+ Arrays.toString(department));
+
+		Arrays.sort(department,(o1,o2)->o1.getHireDate().compareTo(o2.getHireDate()));
 		//After Sorting
-		System.out.println("After Sorting with name:"+ Arrays.toString(department));
+		System.out.println("After Sorting with hired date:"+ Arrays.toString(department));
 
 	}
 
