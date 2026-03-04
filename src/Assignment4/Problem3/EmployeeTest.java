@@ -45,12 +45,12 @@ public class EmployeeTest
 
     }
 
-    public static Employee[] findSalaryList (Employee[] employees, double salary) throws Exception
+    public static Employee[] findSalaryList (Employee[] employees, double salary)
     {
 
         if(employees == null || employees.length == 0)
         {
-            throw new Exception("At least one employee is required!");
+            throw new IllegalArgumentException("At least one employee is required!");
         }
         int count = 0;
 
