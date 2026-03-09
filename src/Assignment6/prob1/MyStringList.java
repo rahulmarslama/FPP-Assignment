@@ -12,6 +12,96 @@ public class MyStringList {
 		size = 0;
 	}
 
+	//1.
+	public int indexOf(String s)
+	{
+		if(isEmpty()) return -1;
+		if(s == null) return -1;
+
+		for(int i=0;i<size();i++)
+		{
+			if(s.equals(strArray[i]))
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	//2.
+	public String removeAt(int index)
+	{
+		if(isEmpty()) return null;
+		if(index < 0 || index >= size()) return null;
+
+		String deletedValue = strArray[index];
+		for (int i=index; i< size();i++)
+		{
+			strArray[i] = strArray[i+1];
+		}
+		return deletedValue;
+	}
+
+	//3.
+	public void clear()
+	{
+		if(isEmpty()) return;
+		for (int i = 0;i< size();i++)
+		{
+			strArray[i] = null;
+		}
+		size = 0;
+	}
+
+	//4.
+	public String set(int index, String s)
+	{
+		if(isEmpty()) return null;
+		if(index>= size()) return null;
+		if(s == null) return null;
+
+		String oldValue = strArray[index];
+		strArray[index] = s;
+		return oldValue;
+
+	}
+
+	//5.
+	public boolean containsAll(MyStringList other)
+	{
+		if(isEmpty()) return false;
+		if(other.isEmpty()) return  false;
+
+		boolean flag = false;
+		for (int i=0;i<other.size();i++)
+		{
+			for(int j=0;j<size;j++)
+			{
+				if(other.strArray[i].equals(strArray[j]))
+				{
+					flag = true;
+					break;
+				}
+				flag = false;
+
+			}
+		}
+
+		return flag;
+	}
+
+	//6.
+	public MyStringList subList(int start, int end)
+	{
+		if(isEmpty()) return null;
+		if(start < 0 || end > size() || start > end) return null;
+		MyStringList stringList = new MyStringList();
+		stringList.strArray = Arrays.copyOfRange(this.strArray,start,end);
+		stringList.size = end - start;
+
+		return stringList;
+	}
+
 	// Add an element in last
 	public void add(String s) {
 		 if(s==null) return;// throw new NullPointerException();
@@ -168,5 +258,33 @@ public class MyStringList {
 		System.out.println(l.find("Susan"));
 		// String[] x = (String[]) l.clone();
 		// System.out.println(Arrays.toString(x));
+
+		//1.indexof()
+		System.out.println(l);
+		System.out.println(l.indexOf("Mohanraj"));
+
+		//2. removeAt()
+		System.out.println(l.removeAt(5));
+		System.out.println(l);
+		System.out.println(l.size());
+
+		//3.clear()
+//		l.clear();
+//		System.out.println(l.size());
+
+		//4. set()
+		System.out.println(l.set(0,"Tashi"));
+		System.out.println(l);
+
+		//5. containsAll()
+		MyStringList other = new MyStringList();
+		other.add("Tashi");
+		other.add("Richard");
+		other.add("Susan");
+
+		System.out.println(l.containsAll(other));
+
+		//6.
+		System.out.println(l.subList(1,4));
 	}
 }
