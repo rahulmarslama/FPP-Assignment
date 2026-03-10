@@ -21,15 +21,22 @@ public class DoublyLinkedList {
             tempNode = tempNode.next;
         }
 
-        tempNode.next = newNode;
-        newNode.previous = tempNode;
+        if(header.next==null)
+        {
+            header.next = newNode;
+            newNode.previous =  header;
+        }
+        else
+        {
+            tempNode.next = newNode;
+            newNode.previous = tempNode;
+        }
 
-        if(header.value == null)
+        /*if(header.value == null)
         {
             header.value = item;
             header = newNode;
-        }
-
+        }*/
 
     }
     // 2. Remove by passing object
@@ -73,7 +80,7 @@ public class DoublyLinkedList {
 
         if(header.next != null)
         {
-            header = header.next;
+            header.next = header.next.next;
             header.previous = null;
             return true;
         }
@@ -93,12 +100,11 @@ public class DoublyLinkedList {
             tempNode =tempNode.next;
         }
 
-        while(tempNode.previous!=null)
+        while(tempNode.previous!=header)
         {
             System.out.println(tempNode.value);
             tempNode =tempNode.previous;
         }
-        System.out.println(tempNode.value);
     }
     @Override
     public String toString() {
