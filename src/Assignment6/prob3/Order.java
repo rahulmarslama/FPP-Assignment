@@ -18,6 +18,10 @@ public class Order {
         return totalAmount;
     }
 
+    public String getOrderId() {
+        return orderId;
+    }
+
     public String getCustomerName() {
         return customerName;
     }
@@ -25,12 +29,12 @@ public class Order {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Order order)) return false;
-        return Objects.equals(orderId, order.orderId);
+        return Double.compare(totalAmount, order.totalAmount) == 0 && Objects.equals(orderId, order.orderId) && Objects.equals(customerName, order.customerName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(orderId);
+        return Objects.hash(orderId, customerName, totalAmount);
     }
 
     @Override
