@@ -10,114 +10,104 @@ public class DoublyLinkedList {
     public void addLast(String item)
     {
         Node newNode = new Node();
-
-
-        newNode.next = null;
         newNode.value = item;
+        newNode.next = null;
 
-        Node tempNode = header;
-        while(tempNode.next!=null)
-        {
-            tempNode = tempNode.next;
-        }
-
-        if(header.next==null)
+        if(header.next== null)
         {
             header.next = newNode;
-            newNode.previous =  header;
+            newNode.previous = header;
         }
         else
         {
-            tempNode.next = newNode;
-            newNode.previous = tempNode;
-        }
+            Node current = header.next;
+            while(current.next!=null)
+            {
+                current = current.next;
+            }
 
-        /*if(header.value == null)
-        {
-            header.value = item;
-            header = newNode;
-        }*/
+            current.next = newNode;
+            newNode.previous = current;
+        }
 
     }
     // 2. Remove by passing object
     public boolean remove(String item)
     {
-        boolean found =false;
-        Node tempNode = header;
-        while(tempNode != null)
+        if(header.next == null) return false;
+
+        Node current = header.next;
+        while(current!=null)
         {
-            if(item.equals(tempNode.value))
+            if(current.value.equals(item))
             {
-                found = true;
-                break;
+                if(current.next == null)
+                {
+                    current.previous.next = null;
+                }
+                else
+                {
+                    current.previous.next = current.next;
+                    current.next.previous = current.previous;
 
+                }
+                current = null;
+                return true;
             }
-            tempNode = tempNode.next;
+            current = current.next;
         }
-        if(found)
-        {
-            Node prevNode = tempNode.previous;
-            Node nextNode = tempNode.next;
-
-            if(nextNode == null)
-            {
-                prevNode.next = null;
-            }
-            else
-            {
-                prevNode.next = nextNode;
-                nextNode.previous = prevNode;
-            }
-        }
-
-        return found;
+        return false;
     }
 
     // 3. Remove the First Node
     public boolean removeFirst()
     {
-        Node tempNode = header;
+        if(header.next == null) return false;
 
-        if(header.next != null)
-        {
-            header.next = header.next.next;
-            header.previous = null;
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        header.next = header.next.next;
+        header.next.previous = header;
+        return true;
     }
 
 
     // 4. Prints the list from last to first
     public void printReverse()
     {
-        Node tempNode = header;
-        while(tempNode.next!=null)
+        if(header.next == null) return;
+
+        Node current = header.next;
+        while(current.next!=null)
         {
-            tempNode =tempNode.next;
+            current = current.next;
+        }
+        while(current != header)
+        {
+            System.out.println(current.value);
+            current = current.previous;
         }
 
-        while(tempNode.previous!=header)
-        {
-            System.out.println(tempNode.value);
-            tempNode =tempNode.previous;
-        }
     }
+
     @Override
     public String toString() {
+        if(header.next == null)
+        {
+            return "[Empty Linked List]";
+        }
+        StringBuilder str = new StringBuilder("[Header<==>");
 
-        StringBuilder sb = new StringBuilder();
-        toString(sb, header);
-        return sb.toString();
+        Node current = header.next;
 
-    }
-    private void toString(StringBuilder sb, Node n) {
-        if(n==null) return;
-        if(n.value != null) sb.append(" " + n.value);
-        toString(sb, n.next);
+        while(current!= null)
+        {
+            str.append(current.value);
+            str.append("<==>");
+            current = current.next;
+        }
+
+        str.append("Null]");
+        return str.toString();
+
     }
 
     class Node {
