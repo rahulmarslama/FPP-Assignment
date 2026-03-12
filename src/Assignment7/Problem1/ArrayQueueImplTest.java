@@ -46,8 +46,6 @@ public class ArrayQueueImplTest
         System.out.println("Size : "+cirQueue.size());
         System.out.println("Is Empty: "+cirQueue.isEmpty());
         System.out.println("First Element : "+ cirQueue.peek());
-        System.out.println("front: "+ cirQueue.front);
-        System.out.println("rear: "+ cirQueue.rear);
         System.out.println(cirQueue.toString());
 
         cirQueue.enqueue(1);
@@ -55,27 +53,8 @@ public class ArrayQueueImplTest
         System.out.println("Is Empty: "+cirQueue.isEmpty());
         System.out.println("First Element : "+ cirQueue.peek());
         System.out.println(cirQueue.toString());
-        System.out.println("Capacity: "+ cirQueue.capacity);
-        System.out.println("front: "+ cirQueue.front);
-        System.out.println("rear: "+ cirQueue.rear);
 
 
-        cirQueue.resize();
-        System.out.println("Capacity: "+ cirQueue.capacity);
-        System.out.println("front: "+ cirQueue.front);
-        System.out.println("rear: "+ cirQueue.rear);
-        System.out.println(cirQueue.toString());
-
-        cirQueue.dequeue();
-        cirQueue.dequeue();
-        cirQueue.dequeue();
-        cirQueue.dequeue();
-        cirQueue.dequeue();
-        cirQueue.dequeue();
-        System.out.println("Capacity: "+ cirQueue.capacity);
-        System.out.println("front: "+ cirQueue.front);
-        System.out.println("rear: "+ cirQueue.rear);
-        System.out.println(cirQueue.toString());
 
 
         cirQueue.enqueue(2);
@@ -97,12 +76,9 @@ public class ArrayQueueImplTest
         cirQueue.enqueue(8);
         cirQueue.enqueue(8);
         cirQueue.enqueue(8);
-//        cirQueue.enqueue(9);
-//        cirQueue.enqueue(10);
+        cirQueue.enqueue(9);
+        cirQueue.enqueue(10);
 
-        System.out.println("Capacity: "+ cirQueue.capacity);
-        System.out.println("front: "+ cirQueue.front);
-        System.out.println("rear: "+ cirQueue.rear);
         System.out.println(cirQueue.toString());
 
 

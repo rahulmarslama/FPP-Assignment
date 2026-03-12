@@ -9,10 +9,10 @@ public class ArrayQueueImpl
 {
     private final int DEFAULT_CAPACITY = 10;
     private int size;
-    public int capacity;
+    private int capacity;
     private Integer[] arr;
-    public int front;
-    public int rear;
+    private int front;
+    private int rear;
 
     public ArrayQueueImpl()
     {
@@ -74,13 +74,14 @@ public class ArrayQueueImpl
     {
         return size;
     }
-    public void resize()
+    private void resize()
     {
         if(isEmpty()) return;
         /*if((front-rear-1)% capacity == 0)
         {
             return;
         }*/
+        System.out.println("Resizing");
         Integer[] temp = new Integer[arr.length*2];
 
         int index =front;
