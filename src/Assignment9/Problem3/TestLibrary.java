@@ -14,8 +14,6 @@ public class TestLibrary
         bookCollection.addBook("123MNO","I don't know anymore","Rahul Lama");
         bookCollection.addBook("123PQR","The laugh we all want","Rahul Lama");
 
-
-
         bookCollection.listAllBooks();
 
         bookCollection.borrowBook("123ABC");
@@ -23,7 +21,10 @@ public class TestLibrary
         bookCollection.isBookBorrowed("123ABC");
 
         bookCollection.borrowBook("123ABC");
-        bookCollection.isBookBorrowed("123ABC");
+        System.out.println(bookCollection.isBookBorrowed("123ABC"));
+
+        bookCollection.returnBook("123ABC");
+        System.out.println(bookCollection.isBookBorrowed("123ABC"));
 
     }
 }
