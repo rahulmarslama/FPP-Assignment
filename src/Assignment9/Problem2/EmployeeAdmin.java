@@ -1,8 +1,6 @@
 package Assignment9.Problem2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class EmployeeAdmin {
 	
@@ -31,6 +29,7 @@ public class EmployeeAdmin {
 					}
 				});
 		}
+		Collections.sort(employees, Comparator.comparing(Employee::getSsn));
 		return employees;
 		
 	}
