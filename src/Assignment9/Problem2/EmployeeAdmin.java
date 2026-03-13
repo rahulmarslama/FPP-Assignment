@@ -14,6 +14,10 @@ public class EmployeeAdmin {
 	*/
 	public static List<Employee> prepareReport(HashMap<String, Employee> table, List<String> socSecNums)
 	{
+		if(table.isEmpty() || socSecNums.isEmpty())
+		{
+			return null;
+		}
 		List<Employee> employees = new ArrayList<>();
 
 		for (String ssn:socSecNums)
