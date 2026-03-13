@@ -1,5 +1,6 @@
 package Assignment9.Problem2;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -11,9 +12,22 @@ public class EmployeeAdmin {
 	whose social security number is in the input list socSecNums and whose salary is greater than $80,000. 
 	In addition, this list of Employees must be sorted by social security number, in ascending order (from numerically smallest to numerically largest).
 	*/
-	public static List<Employee> prepareReport(HashMap<String, Employee> table, List<String> socSecNums) {
-		//IMPLEMENT
-		return null;
+	public static List<Employee> prepareReport(HashMap<String, Employee> table, List<String> socSecNums)
+	{
+		List<Employee> employees = new ArrayList<>();
+
+		for (String ssn:socSecNums)
+		{
+				table.forEach((key,student)->
+				{
+					if(key.equals(ssn) && student.getSalary() > 80000)
+					{
+
+						employees.add(student);
+					}
+				});
+		}
+		return employees;
 		
 	}
 	
