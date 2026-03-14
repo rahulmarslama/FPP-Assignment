@@ -1,5 +1,7 @@
 package Assignment10.Problem3;
 
+import java.util.EmptyStackException;
+
 public class MyStack {
     private Integer[] data;
     private int top;
@@ -12,25 +14,45 @@ public class MyStack {
     }
 
     // Push element to stack (no checks yet)
-    public void push(Integer item) {
+    public void push(Integer item)
+    {
+        if(item==null)
+        {
+            throw new NullPointerException("Null values are not allowed.");
+        }
+        if(top == capacity-1)
+        {
+            throw new IllegalStateException("Stack Overflow: cannot push, stack is full.");
+        }
         top++;
         data[top] = item;
     }
 
     // Pop element from stack (no checks yet)
-    public Integer pop() {
+    public Integer pop()
+    {
+        if(isEmpty())
+        {
+            throw new EmptyStackException();
+        }
         Integer item = data[top];
         top--;
         return item;
     }
 
     // Peek top element (no checks yet)
-    public Integer peek() {
+    public Integer peek()
+    {
+        if(isEmpty())
+        {
+            throw new EmptyStackException();
+        }
         return data[top];
     }
 
     // Is stack empty?
-    public boolean isEmpty() {
+    public boolean isEmpty()
+    {
         return top == -1;
     }
 
