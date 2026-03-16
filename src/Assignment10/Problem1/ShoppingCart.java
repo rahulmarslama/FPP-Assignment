@@ -5,10 +5,9 @@ import java.util.Scanner;
 public class ShoppingCart {
     public static void main(String[] args) {
 
-        boolean retry =true;
-        while(retry)
+        Scanner sc = new Scanner(System.in);
+        while(true)
         {
-            Scanner sc = new Scanner(System.in);
             try
             {
                 System.out.print("Enter quantity of items to add (1-50): ");
@@ -18,11 +17,12 @@ public class ShoppingCart {
                     throw new IllegalArgumentException("Quantity entered can not be less than 1 or greater than 50.");
                 }
                 System.out.println("Successfully added " + quantity + " items to your cart!");
-                retry = false;
+                break;
             }
             catch (InputMismatchException inEx)
             {
                 System.out.println("Input must be a number.");
+                sc.nextLine();
             }
             catch (IllegalArgumentException illeEx)
             {
@@ -30,6 +30,7 @@ public class ShoppingCart {
             }
 
         }
+        sc.close();
 
     }
 }
